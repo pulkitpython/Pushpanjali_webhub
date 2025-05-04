@@ -153,7 +153,7 @@ if selected == "Home":
                This website is under devlopement:
                - For basic use please go to the product section then select the name of the product you like.
                - Then go to the contact section and fill the form with appropriate details then click on "send".
-               - We will recieve your email and try to reply you as soon as pssible.
+               - We will recieve your email and try to reply you as soon as possible.
 
 
                Thank you for reading......
