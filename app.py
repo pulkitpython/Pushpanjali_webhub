@@ -147,15 +147,16 @@ if selected == "Home":
       st.write("---")
       left_column, right_column = st.columns((2,1))
      with left_column:
-          st.write("A Little detail about the devloper Pulkit Maithil")
+          st.write("A Little detail about out website")
           st.write(
                """
-               I maded this website using Python and streamlit:
-               - Streamlit is a very good software when combines with Python
-               - How mUch would you rate my website.
+               This website is under devlopement:
+               - For basic use please go to the product section then select the name of the product you like.
+               - Then go to the contact section and fill the form with appropriate details then click on "send".
+               - We will recieve your email and try to reply you as soon as pssible.
 
 
-               to see my old Youtube videos click on the link below
+               Thank you for reading......
 
                """
           )
