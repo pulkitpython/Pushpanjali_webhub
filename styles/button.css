@@ -1,0 +1,28 @@
+/* style.css */
+
+.button-container {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.custom-button {
+    background: linear-gradient(135deg, #E1306C, #FD1D1D);
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.custom-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(135deg, #fd1d1d, #e1306c);
+}
+

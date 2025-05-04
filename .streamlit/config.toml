@@ -1,0 +1,16 @@
+[theme]
+
+# Primary accent for interactive elements (e.g., buttons, sliders)
+primaryColor = "#50C878"  # Emerald Green - healing, balance
+
+# Background color for the main content area
+backgroundColor = "#F5F5DC"  # Light Beige - grounding, simplicity
+
+# Background color for sidebar and most interactive widgets
+secondaryBackgroundColor = "#E6E6FA"  # Lavender - calm, spiritual
+
+# Color used for almost all text
+textColor = "#1E3A8A"  # Deep Blue - wisdom, clarity
+
+# Font family for all text in the app, except code blocks
+font = "sans serif"
