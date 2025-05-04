@@ -26,7 +26,7 @@ def image_to_base64(img_path):
     return base64.b64encode(data).decode()
 
 # Image list from static folder
-image_files = ["static/1.jpg", "static/2.jpg", "static/3.jpg"]
+image_files = ["static/2.jpg", "static/1.jpg", "static/3.jpg"]
 base64_images = []
 
 for img_path in image_files:
