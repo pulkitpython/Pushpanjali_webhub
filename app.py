@@ -28,11 +28,9 @@ def image_to_base64(img_path):
 # --- images ---
 image_filenames = ["1.jpg", "2.jpg", "3.jpg"]
 image_tags = "".join([
-    f'<img src="/static/{img}" alt="Image" class="carousel-image">' 
+    f'<img src="static/{img}" alt="Image" class="carousel-image">' 
     for img in image_filenames
 ])
-
-
 
 
 # ---- Load Assets ---- 
@@ -45,8 +43,6 @@ product_images = ["static/1.jpg", "static/2.jpg", "static/4.jpg"]  # your images
 
 
 carousel_html = f"""
-<link rel="stylesheet" href="/static/carousel.css">
-
 <div class="carousel-container">
     <div class="carousel-slide" id="carousel-slide">
         {image_tags}
@@ -56,26 +52,23 @@ carousel_html = f"""
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {{
-    let currentIndex = 0;
-    const slide = document.getElementById("carousel-slide");
-    const totalImages = slide.children.length;
+    document.addEventListener("DOMContentLoaded", function () {{
+        let currentIndex = 0;
+        const slide = document.getElementById('carousel-slide');
+        const totalImages = slide.children.length;
 
-    function moveSlide(step) {{
-        currentIndex = (currentIndex + step + totalImages) % totalImages;
-        slide.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
-    }}
+        function moveSlide(step) {{
+            currentIndex = (currentIndex + step + totalImages) % totalImages;
+            slide.style.transform = `translateX(-${{currentIndex * 100}}%)`;
+        }}
 
-    document.getElementById("left-btn").addEventListener("click", function () {{
-        moveSlide(-1);
+        document.getElementById('left-btn').addEventListener('click', () => moveSlide(-1));
+        document.getElementById('right-btn').addEventListener('click', () => moveSlide(1));
     }});
-
-    document.getElementById("right-btn").addEventListener("click", function () {{
-        moveSlide(1);
-    }});
-}});
 </script>
 """
+st.markdown(carousel_html, unsafe_allow_html=True)
+
 # Load CSS
 with open("styles/button.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
@@ -83,7 +76,8 @@ with open("styles/button.css") as f:
 with open("styles/style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-
+with open("style/carousel.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 st.markdown(
     """
