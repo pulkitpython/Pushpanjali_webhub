@@ -80,10 +80,8 @@ document.addEventListener("DOMContentLoaded", function () {{
 with open("styles/button.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-def local_css(file_name):
-      with open(file_name) as f:
-           st.markdown(f"<style>{f.read()}</styles>", unsafe_allow_html=True)
-local_css("styles/style.css")
+with open("styles/style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 with open("styles/carousel.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
