@@ -76,7 +76,7 @@ with open("styles/button.css") as f:
 with open("styles/style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-with open("style/carousel.css") as f:
+with open("styles/carousel.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 st.markdown(
