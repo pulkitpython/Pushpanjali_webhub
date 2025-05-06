@@ -25,15 +25,14 @@ def image_to_base64(img_path):
         data = f.read()
     return base64.b64encode(data).decode()
 
-# Image list from static folder
-image_files = ["static/2.jpg", "static/1.jpg", "static/3.jpg"]
-base64_images = []
+# --- images ---
+image_filenames = ["1.jpg", "2.jpg", "3.jpg"]
+image_tags = "".join([
+    f'<img src="/static/{img}" alt="Image" class="carousel-image">' 
+    for img in image_filenames
+])
 
-for img_path in image_files:
-    if os.path.exists(img_path):
-        base64_images.append(image_to_base64(img_path))
-    else:
-        st.error(f"Image not found: {img_path}")
+
 
 
 # ---- Load Assets ---- 
@@ -44,35 +43,39 @@ image_BMW = Image.open("images/12.png")
 image_logo = Image.open("images/3.png")
 product_images = ["static/1.jpg", "static/2.jpg", "static/4.jpg"]  # your images
 
-# Construct HTML
-image_tags = "".join(
-    f'<img src="data:image/jpeg;base64,{img}" class="carousel-image" />' for img in base64_images
-)
 
 carousel_html = f"""
-<link rel="stylesheet" href="static/slider.css">
+<link rel="stylesheet" href="/static/slider.css">
+
 <div class="carousel-container">
-     <div class="carousel-slide" id="carousel-slide">
-          {image_tags}
-     </div>
-     <button class="carousel-button left" id="left-btn">&#10094;</button>
-     <button class="carousel-button right" id="right-btn">&#10095;</button>
+    <div class="carousel-slide" id="carousel-slide">
+        {image_tags}
+    </div>
+    <button class="carousel-button left" id="left-btn">&#10094;</button>
+    <button class="carousel-button right" id="right-btn">&#10095;</button>
 </div>
+
 <script>
-     let currentIndex = 0;
-     const slide = document.getElementById('carousel-slide');
-     const totalImages = slide.children.length;
+document.addEventListener("DOMContentLoaded", function () {{
+    let currentIndex = 0;
+    const slide = document.getElementById("carousel-slide");
+    const totalImages = slide.children.length;
 
-     function moveSlide(step) {{
-          currentIndex = (currentIndex + step + totalImages) % totalImages;
-          slide.style.transform = `translateX(-${{currentIndex * 100}}%)`;
-     }}
+    function moveSlide(step) {{
+        currentIndex = (currentIndex + step + totalImages) % totalImages;
+        slide.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+    }}
 
-     document.getElementById('left-btn').addEventListener('click', () => moveSlide(-1));
-     document.getElementById('right-btn').addEventListener('click', () => moveSlide(1));
+    document.getElementById("left-btn").addEventListener("click", function () {{
+        moveSlide(-1);
+    }});
+
+    document.getElementById("right-btn").addEventListener("click", function () {{
+        moveSlide(1);
+    }});
+}});
 </script>
 """
-
 # Load CSS
 with open("styles/button.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
