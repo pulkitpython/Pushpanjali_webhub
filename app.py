@@ -47,8 +47,9 @@ image_logo = Image.open("images/3.png")
 image_tags = "".join(
     f'<img src="data:image/jpeg;base64,{img}" class="carousel-image" />' for img in base64_images
 )
+
 carousel_html = f"""
-<link rel="stylesheet" href="static/carousel.css">
+<link rel="stylesheet" href="styles/carousel.css">
 <div class="carousel-container">
     <div class="carousel-slide" id="carousel-slide">
         {image_tags}
