@@ -45,7 +45,7 @@ product_images = ["static/1.jpg", "static/2.jpg", "static/4.jpg"]  # your images
 
 
 carousel_html = f"""
-<link rel="stylesheet" href="/static/slider.css">
+<link rel="stylesheet" href="/static/carousel.css">
 
 <div class="carousel-container">
     <div class="carousel-slide" id="carousel-slide">
