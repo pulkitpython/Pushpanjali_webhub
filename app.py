@@ -67,7 +67,7 @@ carousel_html = f"""
     }});
 </script>
 """
-st.markdown(carousel_html, unsafe_allow_html=True)
+
 
 # Load CSS
 with open("styles/button.css") as f:
