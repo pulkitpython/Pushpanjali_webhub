@@ -49,7 +49,7 @@ image_tags = "".join(
 )
 
 carousel_html = f"""
-<link rel="stylesheet" href="styles/carousel.css">
+<link rel="stylesheet" href="static/slider.css">
 <div class="carousel-container">
     <div class="carousel-slide" id="carousel-slide">
         {image_tags}
@@ -59,18 +59,19 @@ carousel_html = f"""
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function () {{
+     
      let currentIndex = 0;
      const slide = document.getElementById('carousel-slide');
      const totalImages = slide.children.length;
 
-    function moveSlide(step) {{
-        currentIndex = (currentIndex + step + totalImages) % totalImages;
-        slide.style.transform = `translateX(-$${{currentIndex * 100}}%)`;
-    }}
+     function moveSlide(step) {{
+          currentIndex = (currentIndex + step + totalImages) % totalImages;
+          slide.style.transform = `translateX(-$${{currentIndex * 100}}%)`;
+     }}
 
-          document.getElementById('left-btn').addEventListener('click', () => moveSlide(-1));
-          document.getElementById('right-btn').addEventListener('click', () => moveSlide(1));
-}});
+     document.getElementById('left-btn').addEventListener('click', () => moveSlide(-1));
+     document.getElementById('right-btn').addEventListener('click', () => moveSlide(1));
+}}
 </script>
 """
 
