@@ -59,21 +59,20 @@ carousel_html = f"""
      <button class="carousel-button right" id="right-btn">&#10095;</button>
 </div>
 <script>
-     document.addEventListener("DOMContentLoaded", function () {{
-          let currentIndex = 0;
-          const slide = document.getElementById('carousel-slide');
-          const totalImages = slide.children.length;
+     let currentIndex = 0;
+     const slide = document.getElementById('carousel-slide');
+     const totalImages = slide.children.length;
 
-          function moveSlide(step) {{
-               currentIndex = (currentIndex + step + totalImages) % totalImages;
-               slide.style.transform = `translateX(-$${{currentIndex * 100}}%)`;
-          }}
+     function moveSlide(step) {{
+          currentIndex = (currentIndex + step + totalImages) % totalImages;
+          slide.style.transform = `translateX(-${{currentIndex * 100}}%)`;
+     }}
 
-          document.getElementById('left-btn').addEventListener('click', () => moveSlide(-1));
-          document.getElementById('right-btn').addEventListener('click', () => moveSlide(1));
-     }});
+     document.getElementById('left-btn').addEventListener('click', () => moveSlide(-1));
+     document.getElementById('right-btn').addEventListener('click', () => moveSlide(1));
 </script>
-     """
+"""
+
 # Load CSS
 with open("styles/button.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)

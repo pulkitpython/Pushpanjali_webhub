@@ -1,41 +1,17 @@
+.carousel-slide {
+  display:flex;
+  transition:transform 0.5s ease-in-out;
+  width:100%;
+}
 .carousel-container {
-    position:relative;
-    width:100%;
-    max-width:500px;
-    overflow:hidden;
-    margin-bottom:20px;
-  }
-  
-  .carousel-slide {
-    display:flex;
-    transition:transform 0.5s ease-in-out;
-  }
-  
-  .carousel-image {
-    width:100%;
-    flex-shrink:0;
-    border-radius:10px;
-  }
-  
-  .carousel-button {
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    font-size:24px;
-    background-color:#00000088;
-    color:white;
-    border:none;
-    cursor:pointer;
-    padding:8px;
-    z-index:1;
-    border-radius:50%;
-  }
-  
-  .carousel-button.left {
-    left:10px;
-  }
-  
-  .carousel-button.right {
-    right:10px;
-  }
+  overflow:hidden;
+  width:100%;
+  position:relative;
+}
+.carousel-image {
+  width:100%;
+  flex:0 0 100%;
+  max-width:100%;
+}
+
   
