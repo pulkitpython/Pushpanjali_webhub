@@ -59,17 +59,17 @@ carousel_html = f"""
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function () {{
-    let currentIndex = 0;
-    const slide = document.getElementById('carousel-slide');
-    const totalImages = slide.children.length;
+     let currentIndex = 0;
+     const slide = document.getElementById('carousel-slide');
+     const totalImages = slide.children.length;
 
     function moveSlide(step) {{
         currentIndex = (currentIndex + step + totalImages) % totalImages;
         slide.style.transform = `translateX(-$${{currentIndex * 100}}%)`;
     }}
 
-    document.getElementById('left-btn').addEventListener('click', () => moveSlide(-1));
-    document.getElementById('right-btn').addEventListener('click', () => moveSlide(1));
+          document.getElementById('left-btn').addEventListener('click', () => moveSlide(-1));
+          document.getElementById('right-btn').addEventListener('click', () => moveSlide(1));
 }});
 </script>
 """
